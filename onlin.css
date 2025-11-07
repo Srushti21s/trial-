@@ -1,4 +1,4 @@
-/* General Styles */
+/* Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,10 +6,10 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
+  font-family: "Poppins", sans-serif;
   color: #333;
-  background: #f9f9f9;
+  background-color: #f9f9f9;
+  line-height: 1.6;
 }
 
 /* Header */
@@ -33,7 +33,7 @@ header {
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 nav ul {
@@ -58,23 +58,39 @@ nav ul li a:hover {
 
 /* Hero Section */
 .hero {
-  background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b') center/cover no-repeat;
+  background: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
   height: 90vh;
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
   color: #fff;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .hero-content {
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  padding: 60px 20px;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
 }
 
 .hero h2 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.1rem;
 }
 
 .btn {
@@ -99,6 +115,11 @@ nav ul li a:hover {
   background: #fff;
 }
 
+.about h2 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
 /* Services Section */
 .services {
   background: #ecf0f1;
@@ -106,60 +127,68 @@ nav ul li a:hover {
   text-align: center;
 }
 
+.services h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
 .service-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
+  gap: 20px;
 }
 
 .card {
   background: #fff;
   padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card h3 {
-  margin-bottom: 10px;
   color: #1abc9c;
+  margin-bottom: 10px;
 }
 
 /* Contact Section */
 .contact {
-  padding: 60px 20px;
   background: #fff;
+  padding: 60px 20px;
   text-align: center;
 }
 
 form {
-  display: flex;
-  flex-direction: column;
   max-width: 500px;
   margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 input, textarea {
   margin: 10px 0;
   padding: 12px;
-  border: 1px solid #ccc;
   border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button.btn {
+  cursor: pointer;
+  border: none;
 }
 
 /* Footer */
 footer {
-  text-align: center;
   background: #2c3e50;
   color: #fff;
+  text-align: center;
   padding: 15px;
-  margin-top: 20px;
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
   .service-cards {
     flex-direction: column;
-    align-items: center;
   }
 }
